@@ -1,0 +1,21 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main" >
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item [routerLink]="['/agenda']">Agenda</ion-item>
+        <ion-item [routerLink]="['/boletim']">Boletim</ion-item>
+        <ion-item [routerLink]="['/cursos-livres']">Cursos Livres</ion-item>
+        <ion-item [routerLink]="['/documentos']">Documentos</ion-item>
+        <ion-item [routerLink]="['/rematricula']">Rematrícula</ion-item>
+        <ion-item [routerLink]="['/transporte']">Transporte</ion-item>
+        <ion-item [routerLink]="['/login']">Sair</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

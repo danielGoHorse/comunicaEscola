@@ -1,0 +1,7 @@
+{
+  "name": "app-comunica-escola",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
