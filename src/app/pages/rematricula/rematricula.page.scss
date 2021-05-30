@@ -1,0 +1,33 @@
+.mural-table{
+  margin: 10px 10px 0px 10px;
+  border: 2px solid #046085;
+  border-radius: 10px;
+  background-color: rgb(209 207 142 / 28%);
+}
+
+.perfil-form {
+  display: grid;
+  width: 90%;
+  margin-top: 25px;
+}
+
+.perfil-form label {
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+}
+
+.perfil-form input {
+  border-radius: 7px;
+  height: 40px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding-left: 10px;
+}
+
+.btn-custon{
+width: 90%;
+border-radius: 12px;
+}
+
+.btn-success{
+  --background: #2dd36f !important;
+}

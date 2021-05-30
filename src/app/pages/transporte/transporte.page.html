@@ -23,6 +23,157 @@
       </div>
     </ion-title>
   </ion-row>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-segment color="success" (ionChange)="segmentChanged($event)">
+          <ion-segment-button value="contato" >
+            <ion-label>Contato</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="tipo">
+            <ion-label style="margin: 0px;">Tipo</ion-label>
+            <ion-label style="margin: 0px;">de Transporte</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="solicitacao">
+            <ion-label style="margin: 0px;">Saída</ion-label>
+            <ion-label style="margin: 0px;">Antecipada</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid  class="text-box" *ngIf="contatoForm">
+    <ion-row class="ion-justify-content-center">
+      <div >
+        <h4 class="title-grey">Informe quem traz e <br> busca seu filho</h4>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-checkbox color="primary"></ion-checkbox>
+      <ion-label style="margin: 3px 0px 0px 5px; font-size: 0.9rem !important;">Familia</ion-label>
+
+    </ion-row>
+    <ion-row class="ion-justify-content-center" >
+      <div class="perfil-form">
+        <label for="basic-url">Nome</label>
+        <input type="text" id="basic-url" maxlength="6" aria-describedby="basic-addon3" >
+      </div>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <div class="perfil-form">
+        <label for="">Tel</label>
+        <input type="email" id="basic-url"   aria-describedby="basic-addon3" >
+
+      </div>
+    </ion-row>
+    <hr>
+    <ion-row>
+      <ion-checkbox color="primary"></ion-checkbox>
+      <ion-label style="margin: 3px 0px 0px 5px; font-size: 0.9rem !important;">Transporte Particular</ion-label>
+    </ion-row>
+    <ion-row class="ion-justify-content-center" >
+      <div class="perfil-form">
+        <label for="basic-url">Nome</label>
+        <input type="text" id="basic-url" maxlength="6" aria-describedby="basic-addon3" >
+      </div>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <div class="perfil-form">
+        <label for="">Tel</label>
+        <input type="email" id="basic-url"   aria-describedby="basic-addon3" >
+
+      </div>
+    </ion-row>
+    <hr>
+    <ion-row>
+      <ion-checkbox color="primary"></ion-checkbox>
+      <ion-label style="margin: 3px 0px 0px 5px; font-size: 0.9rem !important;">Transporte Público</ion-label>
+    </ion-row>
+    <ion-row style="margin-top: 10px; margin-bottom: 10px;" class="ion-justify-content-center">
+      <ion-button class="btn-success">Salvar</ion-button>
+
+    </ion-row>
+  </ion-grid>
+  <ion-grid  class="text-box" *ngIf="tipoForm">
+    <ion-row class="ion-justify-content-center">
+      <div >
+        <h4 class="title-grey">Selecione como seu <br>filho chega e vai<br> embora da escola</h4>
+      </div>
+    </ion-row>
+    <ion-row style=" margin-bottom: 10px;">
+      <ion-checkbox color="primary"></ion-checkbox>
+      <ion-label style="margin: 3px 0px 0px 5px; font-size: 0.9rem !important;">A pé sozinho</ion-label>
+
+    </ion-row>
+    <ion-row style=" margin-bottom: 10px;">
+      <ion-checkbox color="primary"></ion-checkbox>
+      <ion-label style="margin: 3px 0px 0px 5px; font-size: 0.9rem !important;">A pé acompanhado</ion-label>
+
+    </ion-row>
+    <ion-row style=" margin-bottom: 10px;">
+      <ion-checkbox color="primary"></ion-checkbox>
+      <ion-label style="margin: 3px 0px 0px 5px; font-size: 0.9rem !important;">Carro</ion-label>
+
+    </ion-row>
+    <ion-row style=" margin-bottom: 10px;">
+      <ion-checkbox color="primary"></ion-checkbox>
+      <ion-label style="margin: 3px 0px 0px 5px; font-size: 0.9rem !important;">Onibus escolar</ion-label>
+
+    </ion-row>
+    <ion-row style=" margin-bottom: 10px;">
+      <ion-checkbox color="primary"></ion-checkbox>
+      <ion-label style="margin: 3px 0px 0px 5px; font-size: 0.9rem !important;">Perua/van</ion-label>
+
+    </ion-row>
+    <ion-row style="margin-top: 10px; margin-bottom: 10px;" class="ion-justify-content-center">
+      <ion-button class="btn-success">Salvar</ion-button>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid  class="text-box" *ngIf="solicitaForm">
+    <ion-row class="ion-justify-content-center">
+      <div style="text-align: center;" >
+        <h4 class="title-grey">Seu filho vai sair mais cedo? </h4>
+        <h4 class="title-grey">Avise-nos</h4>
+      </div>
+    </ion-row>
+    <ion-row class="ion-justify-content-center" >
+      <div class="perfil-form">
+        <ion-label>Data</ion-label>
+        <ion-datetime displayFormat="MM DD YY" placeholder="Selecione a data"></ion-datetime>
+
+      </div>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <div class="perfil-form">
+        <label for="">Horario</label>
+        <input type="email" id="basic-url"   aria-describedby="basic-addon3" >
+
+      </div>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <div class="perfil-form">
+        <label for="">Motivo</label>
+        <input type="email" id="basic-url"   aria-describedby="basic-addon3" >
+
+      </div>
+    </ion-row>
+    <ion-row style="margin-top: 10px; margin-bottom: 10px;" class="ion-justify-content-center">
+      <ion-button class="btn-success">Enviar</ion-button>
+
+    </ion-row>
+  </ion-grid>
+  <ion-grid  class="text-box" *ngIf="default">
+
+  </ion-grid>
+
+
+
+
+
 </ion-content>
 <ion-footer>
   <ion-toolbar>
