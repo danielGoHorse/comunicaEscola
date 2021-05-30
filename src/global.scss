@@ -28,35 +28,42 @@ body {
   background: white !important;
 }
 
-.title-grey {
+.title-page {
   // font-family:
   font: normal normal bold Raleway, sans-serif !important;
-  color: #687484 !important;
+  color: #075d72 !important;
+  background-color: #8585854b;
+  padding: 5px;
 }
 
 h4 {
   font: normal normal normal Roboto, regular, sans-serif !important;
   color: #687484 !important;
+
 }
 h5 {
   font: normal normal normal Roboto, regular, sans-serif !important;
-  color: #687484 !important;
+  color: #075d72 !important;
 }
 
 h6 {
   font: normal normal normal Roboto, regular, sans-serif !important;
-  color: #687484 !important;
+  color: #075d72 !important;
 }
 
 
 .h6-logo{
-  border: 1px solid grey;
+  border: 1px solid #075d72;
   font-weight: 600 !important;
   text-align: center;
   font-size: 1.2rem;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: 10px;
+}
+
+.social{
+  color: #075d72;
 }
 
 
