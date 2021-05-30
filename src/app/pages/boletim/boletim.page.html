@@ -23,6 +23,28 @@
       </div>
     </ion-title>
   </ion-row>
+ <ion-grid class="bol-table">
+  <ngx-datatable  [rows]="disciplinas"
+   [ngClass]="tableStyle"
+   [rowHeight]="'auto'"
+   [headerHeight]="50"
+      [columnMode]="'flex'"
+>
+  <ngx-datatable-column name="Disciplina"  [flexGrow]="2.2" sortable="false">
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+      {{value}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Bim"  [flexGrow]="0.5" sortable="false"></ngx-datatable-column>
+  <ngx-datatable-column name="Media"  [flexGrow]="1" ></ngx-datatable-column>
+  <ngx-datatable-column name="M Final"  [flexGrow]="1" sortable="false"></ngx-datatable-column>
+
+
+
+</ngx-datatable>
+ </ion-grid>
+
+
 </ion-content>
 <ion-footer>
   <ion-toolbar>

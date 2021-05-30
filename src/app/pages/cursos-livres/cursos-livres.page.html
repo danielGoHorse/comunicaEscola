@@ -23,6 +23,32 @@
       </div>
     </ion-title>
   </ion-row>
+  <ion-grid class="mural-table">
+    <ngx-datatable  [rows]="cursos"
+    [ngClass]="tableStyle"
+    [rowHeight]="'auto'"
+    [headerHeight]="50"
+       [columnMode]="'force'"
+ >
+   <ngx-datatable-column name="Curso"  [flexGrow]="2.2" sortable="false">
+     <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+       {{value}}
+     </ng-template>
+   </ngx-datatable-column>
+   <ngx-datatable-column name="Dia"  [flexGrow]="0.5" sortable="false"></ngx-datatable-column>
+   <ngx-datatable-column name="Inicio"  [flexGrow]="1" ></ngx-datatable-column>
+   <ngx-datatable-column name="Fim"  [flexGrow]="1" sortable="false"></ngx-datatable-column>
+
+
+
+ </ngx-datatable>
+  </ion-grid>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-button class="btn-success">Inscrição</ion-button>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <ion-footer>
   <ion-toolbar>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import data from '../../../assets/cursos.json'
 
 @Component({
   selector: 'app-cursos-livres',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosLivresPage implements OnInit {
 
-  constructor() { }
+  private cursos = data;
+  tableStyle = 'bootstrap';
+
+
+  constructor() {
+    console.log(this.cursos)
+  }
 
   ngOnInit() {
+  }
+
+  switchStyle() {
+
+  }
+
+  getRowClass(row) {
+
+  }
+
+  async open(row) {
+
   }
 
 }

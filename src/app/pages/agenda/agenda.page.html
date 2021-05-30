@@ -26,7 +26,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-segment value="gerais" color="success" (ionChange)="segmentChanged($event)">
+        <ion-segment color="success" (ionChange)="segmentChanged($event)">
           <ion-segment-button value="gerais" >
             <ion-label>Recados Gerais</ion-label>
           </ion-segment-button>
@@ -40,13 +40,24 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-grid class="text-box">
+  <ion-grid *ngIf="aluno.mensagem" class="text-box">
     <ion-row>
       <ion-text color="dark">
-        <h5>Olá</h5>
+        <h5 >Olá</h5>
         <h5>{{aluno.mensagem}}</h5>
-        <h5>Atenciosamente a Professora</h5>
+        <h5 >Atenciosamente a Professora</h5>
       </ion-text>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="envioRecado" class="text-box" style="height: 50%;">
+
+        <ion-textarea style="background-color: transparent;" placeholder="Escreva aqui seu recado para a professora"></ion-textarea>
+
+  </ion-grid>
+  <ion-grid *ngIf="envioRecado" >
+    <ion-row class="ion-justify-content-center">
+      <ion-button class="btn-success">Enviar</ion-button>
+      <ion-button (click)="cancelar()" color="danger">Limpar</ion-button>
     </ion-row>
   </ion-grid>
 

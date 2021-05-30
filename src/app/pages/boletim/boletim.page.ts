@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ColumnMode } from '@swimlane/ngx-datatable';
+import data from '../../../assets/disciplinas.json';
 
 @Component({
   selector: 'app-boletim',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoletimPage implements OnInit {
 
-  constructor() { }
+  private disciplinas = data;
+
+  tableStyle = 'bootstrap';
+
+
+  constructor() {
+    console.log(this.disciplinas)
+  }
 
   ngOnInit() {
   }
+
+  switchStyle() {
+
+  }
+
+  getRowClass(row) {
+
+  }
+
+  async open(row) {
+
+  }
+
+
 
 }

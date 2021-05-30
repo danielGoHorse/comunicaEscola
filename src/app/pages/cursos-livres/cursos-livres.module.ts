@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CursosLivresPageRoutingModule } from './cursos-livres-routing.module';
 
 import { CursosLivresPage } from './cursos-livres.page';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CursosLivresPageRoutingModule
+    CursosLivresPageRoutingModule,
+    NgxDatatableModule
   ],
   declarations: [CursosLivresPage]
 })
