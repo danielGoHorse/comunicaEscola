@@ -1,0 +1,52 @@
+[
+  {
+    "disciplina": "Ling. Portuguesa",
+    "bim": "1",
+    "media": "8.5",
+    "final":""
+  },
+  {
+    "disciplina": "Matemática",
+    "bim": "1",
+    "media": "10",
+    "final":""
+  },
+  {
+    "disciplina": "História",
+    "bim": "1",
+    "media": "5",
+    "final":""
+  },
+  {
+    "disciplina": "Geografia",
+    "bim": "1",
+    "media": "7,5",
+    "final":""
+  },
+  {
+    "disciplina": "Ciências",
+    "bim": "1",
+    "media": "9",
+    "final":""
+  },
+  {
+    "disciplina": "Ed. Física",
+    "bim": "1",
+    "media": "8",
+    "final":""
+  },
+  {
+    "disciplina": "Inglês",
+    "bim": "1",
+    "media": "8",
+    "final":""
+  },
+  {
+    "disciplina": "Arte",
+    "bim": "1",
+    "media": "10",
+    "final":""
+  }
+
+
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "curso": "Ballet",
+    "dia": "Segunda-Feira",
+    "inicio": "13h",
+    "fim":"14h"
+  },
+  {
+    "curso": "Ballet",
+    "dia": "Segunda-Feira",
+    "inicio": "14h",
+    "fim":"15h"
+  },
+  {
+    "curso": "Ballet",
+    "dia": "Segunda-Feira",
+    "inicio": "15h",
+    "fim":"16h"
+  },
+  {
+    "curso": "Violão",
+    "dia": "Quarta-Feira",
+    "inicio": "13h",
+    "fim":"14h"
+  },
+  {
+    "curso": "Violão",
+    "dia": "Quarta-Feira",
+    "inicio": "15h",
+    "fim":"16h"
+  },
+  {
+    "curso": "Teatro",
+    "dia": "Sexta-Feira",
+    "inicio": "13h",
+    "fim":"15h"
+  },
+  {
+    "curso": "Teatro",
+    "dia": "Sexta-Feira",
+    "inicio": "15h",
+    "fim":"17h"
+  }
+]
