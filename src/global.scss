@@ -68,13 +68,25 @@ h6 {
   font-weight: 600 !important;
   text-align: center;
   font-size: 1.2rem;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 4px 20px 2px 20px;
   margin-left: 10px;
+  margin-top: 6px;
 }
 
 .social{
   color: #075d72;
+}
+
+.nome{
+  h3{
+    text-align: center;
+    background-color: #075d721f;
+  }
+}
+
+ion-title{
+  padding: 0px;
+  // padding-left: 15%;
 }
 
 

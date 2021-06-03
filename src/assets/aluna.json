@@ -1,0 +1,48 @@
+[
+  {
+    "nome": "Ballet",
+    "rg":"",
+    "cpf":"",
+    "dataNascimento":"",
+    "idade": "Segunda-Feira",
+    "responsavelLegal":"",
+    "telefone":"",
+    "religiao":"",
+    "emergenciaNome":"",
+    "emergenciaTelefone":"",
+    "possuiConvenio":"",
+    "nomeConvenio":"",
+    "alergica":"",
+    "nomeAlergia":"",
+    "deficiencia":"",
+    "nomeDeficiencia":"",
+    "tipoSanguinio":"",
+    "genero": "13h",
+    "escola":"14h",
+    "serie":"14h",
+    "turma":"14h",
+    "periodo":"14h",
+    "tipoTransporte":[
+      {
+        "tipo":"14h",
+        "responsavel":"14h",
+        "tel":"14h"
+      }
+    ],
+    "cursos":[
+      {
+        "cursoId":"14h",
+        "cursoNome":"14h",
+        "diaSemana":"14h",
+        "horario":"14h"
+      },
+      {
+        "cursoId":"14h",
+        "cursoNome":"14h",
+        "diaSemana":"14h",
+        "horario":"14h"
+      }
+
+    ]
+  }
+]
