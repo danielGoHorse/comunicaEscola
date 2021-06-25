@@ -1,22 +1,84 @@
-
-
 <ion-content [fullscreen]="true" class="back">
   <ion-grid class="grid">
 
     <div style="text-align: center; margin-top: 20px; padding: 0px 30px 0px 30px;">
-      <img src="../../assets/_.png" alt="" style="width: 60px;margin-top: 7px;">
-      <h6 style="margin-top:-7px;border: 1px solid grey; font-weight: 600 !important; text-align: center;font-size: 1.2rem; ">Comunica Escola</h6>
+      <img src="../../assets/logo.png" alt="" style="width: 125px;margin-top: 7px;">
+      <!-- <h6 style="margin-top:-7px;border: 1px solid grey; font-weight: 600 !important; text-align: center;font-size: 1.2rem; ">Comunica Escola</h6> -->
     </div>
 
     <div class="container">
-      <ion-row class="ion-justify-content-center">
-        <div style=" width: 100%; margin-top: 20px; margin-left: 20px; margin-right: 20px;">
+      <ion-row class="ion-justify-content-center" style=" margin-top: 20px;">
+        <!-- <div style=" width: 100%; margin-top: 20px; margin-left: 20px; margin-right: 20px;">
           <h4 class="title-grey">Bem vindo</h4>
-          <!-- <hr style="width: 50px; size: 5px; height: 10px;"> -->
           <h6 class="subject-body" style="text-align: left; margin-top: 30px;">Insira seu e-mail cadastrado<br> e senha recebida por SMS</h6>
-        </div>
+        </div> -->
+        <ion-segment (ionChange)="segmentChanged($event)" mode="ios" value="login">
+          <ion-segment-button mode="ios" value="login">
+            <ion-label>Login</ion-label>
+          </ion-segment-button>
+          <ion-segment-button mode="ios" value="register">
+            <ion-label>Cadastro</ion-label>
+          </ion-segment-button>
+        </ion-segment>
       </ion-row>
-      <ion-row class="ion-justify-content-center" style="margin-top: 20px;">
+
+      <ion-slides style="margin-top: 60px;">
+        <ion-slide>
+          <div class="slide-inner ion-padding">
+            <span>Login</span>
+
+            <ion-row class="ion-justify-content-center">
+              <div class="perfil-form">
+                <label for="">E-mail</label>
+                <input type="email" id="basic-url" aria-describedby="basic-addon3">
+
+              </div>
+            </ion-row>
+            <ion-row class="ion-justify-content-center">
+              <div class="perfil-form">
+                <label for="basic-url">Digite sua Senha</label>
+                <input type="password" id="basic-url" maxlength="6" aria-describedby="basic-addon3">
+              </div>
+            </ion-row>
+
+            <ion-row class="ion-justify-content-center" style="margin-top: 20px;">
+
+              <ion-button (click)="logar()" color="primary">Entrar</ion-button>
+            </ion-row>
+          </div>
+        </ion-slide>
+
+        <ion-slide>
+          <div class="slide-inner ion-padding">
+            <span>Cadastro</span>
+
+            <ion-row class="ion-justify-content-center">
+              <div class="perfil-form">
+                <label for="">E-mail</label>
+                <input type="email" id="basic-url" aria-describedby="basic-addon3">
+
+              </div>
+            </ion-row>
+            <ion-row class="ion-justify-content-center">
+              <div class="perfil-form">
+                <label for="basic-url">Senha</label>
+                <input type="password" id="basic-url" maxlength="6" aria-describedby="basic-addon3">
+              </div>
+            </ion-row>
+
+            <ion-row class="ion-justify-content-center" style="margin-top: 20px;">
+
+              <ion-button (click)="logar()" color="primary">Entrar</ion-button>
+            </ion-row>
+          </div>
+        </ion-slide>
+      </ion-slides>
+
+
+
+
+
+      <!-- <ion-row class="ion-justify-content-center" style="margin-top: 20px;">
         <div class="perfil-form">
           <label for="">E-mail</label>
           <input type="email" id="basic-url"   aria-describedby="basic-addon3" >
@@ -28,22 +90,22 @@
           <label for="basic-url">Digite sua Senha</label>
           <input type="password" id="basic-url" maxlength="6" aria-describedby="basic-addon3" >
         </div>
-      </ion-row>
+      </ion-row> -->
 
-      <ion-row class="ion-justify-content-center" style="margin-top: 20px;">
+      <!-- <ion-row class="ion-justify-content-center" style="margin-top: 20px;">
 
          <ion-button (click)="logar()" color="primary">Entrar</ion-button>
-      </ion-row>
-      <ion-row class="ion-justify-content-center">
+      </ion-row> -->
+      <!-- <ion-row class="ion-justify-content-center">
         <div style=" width: 90%; margin-top: 20px;text-align: center;">
           <a (click)="newCadastro()">
             <h6>É sua primeira vez? Clique aqui</h6>
           </a>
         </div>
-      </ion-row>
+      </ion-row> -->
       <ion-row class="ion-justify-content-center">
         <div style=" width: 90%; margin-top: 10px;text-align: center;">
-            <h5>Powered by DHGiga</h5>
+          <h5>Powered by DHGiga</h5>
         </div>
       </ion-row>
     </div>

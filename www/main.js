@@ -54,23 +54,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./app.component.html */ "VzVu");
 /* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component.scss */ "ynWL");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
 
 
 
 
 
 let AppComponent = class AppComponent {
-    constructor(menu) {
+    constructor(menu, router) {
         this.menu = menu;
+        this.router = router;
     }
     openFirst() {
         this.menu.enable(true, 'first');
         this.menu.open('first');
     }
+    rotas(param) {
+        let local = param;
+        this.router.navigate([local]);
+        this.menu.close();
+    }
 };
 AppComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["MenuController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["MenuController"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
 ];
 AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -93,7 +102,7 @@ AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-menu side=\"start\" menuId=\"first\" contentId=\"main\" >\n    <ion-header>\n      <ion-toolbar color=\"primary\">\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item [routerLink]=\"['/agenda']\">Agenda</ion-item>\n        <ion-item [routerLink]=\"['/boletim']\">Boletim</ion-item>\n        <ion-item [routerLink]=\"['/cursos-livres']\">Cursos Livres</ion-item>\n        <ion-item [routerLink]=\"['/documentos']\">Documentos</ion-item>\n        <ion-item [routerLink]=\"['/rematricula']\">Rematrícula</ion-item>\n        <ion-item [routerLink]=\"['/transporte']\">Transporte</ion-item>\n        <ion-item [routerLink]=\"['/login']\">Sair</ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n  <ion-router-outlet id=\"main\"></ion-router-outlet>\n\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-menu side=\"start\" menuId=\"first\" contentId=\"main\">\n    <ion-header>\n      <ion-toolbar color=\"primary\">\n        <ion-title style=\"margin-left: 10px;\">Menu</ion-title>\n\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item (click)=\"rotas('/home')\">\n          <ion-icon name=\"home-outline\" slot=\"start\"></ion-icon>\n          <ion-label>Home</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-icon name=\"book-outline\" slot=\"start\"></ion-icon>\n          <ion-label>Transparência</ion-label>\n        </ion-item>\n        <ion-item (click)=\"rotas('/agenda')\">\n          <ion-icon name=\"document-text-outline\" slot=\"start\"></ion-icon>\n          <ion-label>Agenda</ion-label>\n        </ion-item>\n        <ion-item (click)=\"rotas('/boletim')\">\n          <ion-icon name=\"receipt-outline\" slot=\"start\"></ion-icon>\n          <ion-label>Boletim</ion-label>\n        </ion-item>\n        <ion-item (click)=\"rotas('/cursos-livres')\">\n          <ion-icon name=\"school-outline\" slot=\"start\"></ion-icon>\n          <ion-label>Cursos Livres</ion-label>\n        </ion-item>\n        <ion-item (click)=\"rotas('/documentos')\">\n          <ion-icon name=\"id-card-outline\" slot=\"start\"></ion-icon>\n          <ion-label>Documentos</ion-label>\n        </ion-item>\n        <ion-item (click)=\"rotas('/rematricula')\">\n          <ion-icon name=\"alert-circle\" slot=\"start\"></ion-icon>\n          <ion-label>Rematrícula</ion-label>\n        </ion-item>\n        <ion-item (click)=\"rotas('/transporte')\">\n          <ion-icon name=\"bus-outline\" slot=\"start\"></ion-icon>\n          <ion-label>Transporte</ion-label>\n        </ion-item>\n        <ion-item (click)=\"rotas('/login')\">\n          <ion-icon name=\"exit-outline\" slot=\"start\"></ion-icon>\n          <ion-label>Sair</ion-label>\n        </ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n  <ion-router-outlet id=\"main\"></ion-router-outlet>\n\n</ion-app>\n");
 
 /***/ }),
 

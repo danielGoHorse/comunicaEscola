@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import dataAluno from '../../assets/aluna.json'
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,8 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  private aluna = dataAluno;
 
   constructor(private menu: MenuController) {}
 
