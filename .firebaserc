@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "comunicaescola-30128": {
+      "hosting": {
+        "app": [
+          "comunicaescola-30128"
+        ]
+      }
+    }
+  }
+}

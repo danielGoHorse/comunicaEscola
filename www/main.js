@@ -26,7 +26,22 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false
+    production: false,
+    firebase: {
+        apiKey: 'AIzaSyDmmw-Eu44MsgQrvlwmqkV_jnq-tEKzLBw',
+        // eslint-disable-next-line @typescript-eslint/quotes
+        authDomain: "comunicaescola-30128.firebaseapp.com",
+        // eslint-disable-next-line @typescript-eslint/quotes
+        projectId: "comunicaescola-30128",
+        // eslint-disable-next-line @typescript-eslint/quotes
+        storageBucket: "comunicaescola-30128.appspot.com",
+        // eslint-disable-next-line @typescript-eslint/quotes
+        messagingSenderId: "106675592278",
+        // eslint-disable-next-line @typescript-eslint/quotes
+        appId: "1:106675592278:web:f37ee0165487c759852ff7",
+        // eslint-disable-next-line @typescript-eslint/quotes
+        measurementId: "G-RDCNJXT24H"
+    }
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -123,6 +138,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "Sy1n");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "vY5A");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/fire */ "spgP");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/fire/auth */ "UbJi");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/environments/environment */ "AytR");
+
+
+
 
 
 
@@ -136,7 +157,13 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"]],
+        imports: [
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
+            _angular_fire__WEBPACK_IMPORTED_MODULE_7__["AngularFireModule"].initializeApp(src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].firebase),
+            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_8__["AngularFireAuthModule"]
+        ],
         providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
     })

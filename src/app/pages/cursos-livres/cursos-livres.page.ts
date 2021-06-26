@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import data from '../../../assets/cursos.json'
+import data from '../../../assets/cursos.json';
 
 @Component({
   selector: 'app-cursos-livres',
@@ -9,11 +9,12 @@ import data from '../../../assets/cursos.json'
 export class CursosLivresPage implements OnInit {
 
   private cursos = data;
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   tableStyle = 'bootstrap';
 
 
   constructor() {
-    console.log(this.cursos)
+    console.log(this.cursos);
   }
 
   ngOnInit() {

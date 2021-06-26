@@ -13,6 +13,11 @@ export class HomePage {
 
   constructor(private menu: MenuController) {}
 
+  ngOnInit() {
+    // this.aluna = dataAluno;
+    console.log(this.aluna)
+  }
+
   openFirst() {
     this.menu.enable(true, 'first');
     this.menu.open('first');

@@ -1,6 +1,10 @@
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/member-ordering */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonSlides, LoadingController, ToastController } from '@ionic/angular';
+import { User } from 'src/app/interfaces/user';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,17 +13,17 @@ import { IonSlides, LoadingController, ToastController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
   @ViewChild(IonSlides) slides: IonSlides;
-  public wavesPosition: number = 0;
-  private wavesDifference: number = 100;
-  // public userLogin: User = {};
-  // public userRegister: User = {};
+  public wavesPosition = 0;
+  private wavesDifference = 100;
+  public userLogin: User = {};
+  public userRegister: User = {};
   private loading: any;
 
   constructor(public router: Router,
-
+    private authService: AuthService,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
-    ) { }
+  ) { }
 
   ngOnInit() {
   }
@@ -34,12 +38,63 @@ export class LoginPage implements OnInit {
     }
   }
 
-  newCadastro(){
-    this.router.navigate(["/cadastro-acesso"])
+  // newCadastro(){
+  //   this.router.navigate(["/cadastro-acesso"]);
+  // }
+
+  async login() {
+    await this.presentLoading();
+
+    try {
+      await this.authService.login(this.userLogin);
+      // this.router.navigate(["/home"]);
+    } catch (error) {
+
+        let message: string;
+      switch (error.code) {
+        case 'auth/user-not-found':
+          message = 'Usuário ou Senha Inválido';
+          break;
+      }
+      this.presentToast(message);
+    } finally {
+      this.loading.dismiss();
+    }
   }
 
-  logar(){
-    this.router.navigate(["/home"])
+  async register() {
+    this.presentLoading();
+    try {
+      await this.authService.register(this.userRegister);
+    } catch (error) {
+
+      // let message: string;
+      // switch (error.code) {
+      //   case 'auth/email-already-in-use':
+      //     message = 'E-mail em uso';
+      //     break;
+
+      //   case 'auth/invalid-email':
+      //     message = 'E-mail invalido';
+      //     break;
+
+      // }
+
+
+      this.presentToast(error.message);
+    } finally {
+      this.loading.dismiss();
+    }
+  }
+
+  async presentLoading() {
+    this.loading = await this.loadingCtrl.create({ message: 'Aguarde...' });
+    return this.loading.present();
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastCtrl.create({ message, duration: 2000 });
+    toast.present();
   }
 
 }
