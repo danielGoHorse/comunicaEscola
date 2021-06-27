@@ -48,7 +48,23 @@ const routes: Routes = [
   {
     path: 'cadastro-acesso',
     loadChildren: () => import('./pages/cadastro-acesso/cadastro-acesso.module').then( m => m.CadastroAcessoPageModule)
-  }
+  },
+  {
+    path: 'principal-professor',
+    loadChildren: () => import('./pages/principal-professor/principal-professor.module').then( m => m.PrincipalProfessorPageModule)
+  },
+  {
+    path: 'principal-pais',
+    loadChildren: () => import('./pages/principal-pais/principal-pais.module').then( m => m.PrincipalPaisPageModule)
+  },
+  {
+    path: 'principal-alunos',
+    loadChildren: () => import('./pages/principal-alunos/principal-alunos.module').then( m => m.PrincipalAlunosPageModule)
+  },
+  {
+    path: 'principal-escola',
+    loadChildren: () => import('./pages/principal-escola/principal-escola.module').then( m => m.PrincipalEscolaPageModule)
+  },
 ];
 
 @NgModule({

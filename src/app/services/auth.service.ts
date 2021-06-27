@@ -18,7 +18,7 @@ register(user: User){
 }
 
 logout(){
-
+ return this.afa.signOut();
 }
 
 getAuth() {

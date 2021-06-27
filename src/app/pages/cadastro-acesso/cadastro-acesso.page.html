@@ -5,7 +5,7 @@
 
     <div style="text-align: center; margin-top: 20px; padding: 0px 30px 0px 30px;">
       <img src="../../assets/logo.png" alt="" style="width: 60px;margin-top: 7px;">
-      <h6 style="margin-top:-7px;border: 1px solid grey; font-weight: 600 !important; text-align: center;font-size: 1.2rem; ">Comunica Escola</h6>
+      <!-- <h6 style="margin-top:-7px;border: 1px solid grey; font-weight: 600 !important; text-align: center;font-size: 1.2rem; ">Comunica Escola</h6> -->
     </div>
 
     <div class="container">
@@ -16,37 +16,61 @@
           <h6 class="subject-body">Preencha os Campos</h6>
         </div>
       </ion-row>
-      <ion-row class="ion-justify-content-center" >
+     <div class="form">
+      <ion-row class="ion-justify-content-center">
         <div class="perfil-form">
-          <label for="basic-url">Chave de Acesso</label>
-          <input type="text" id="basic-url" maxlength="6" aria-describedby="basic-addon3" >
+          <label for="">Nome</label>
+          <input type="text" id="basic-url"   aria-describedby="basic-addon3" [(ngModel)]="userRegister.nome" >
+
         </div>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <div class="perfil-form">
           <label for="">E-mail</label>
-          <input type="email" id="basic-url"   aria-describedby="basic-addon3" >
+          <input type="email" id="basic-url"   aria-describedby="basic-addon3" [(ngModel)]="userRegister.email" >
+
+        </div>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <div class="perfil-form">
+          <label for="">Telefone</label>
+          <input type="text" id="basic-url"   aria-describedby="basic-addon3" [(ngModel)]="userRegister.telefone" >
 
         </div>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <div class="perfil-form">
           <label for="basic-url">Senha</label>
-          <input type="password" id="basic-url" maxlength="6" aria-describedby="basic-addon3" >
+          <input type="text" id="basic-url" maxlength="6" aria-describedby="basic-addon3" [(ngModel)]="userRegister.password" >
         </div>
       </ion-row>
 
 
-      <ion-row class="ion-justify-content-center" style="margin-top: 20px;text-align: center;display: grid;">
+      <!-- <ion-row class="ion-justify-content-center" style="margin-top: 20px;text-align: center;display: grid;">
        <h6 class="termo" style="font-size: 0.9rem;">Estou de acordo que o Comunica Escola contém dados pessoais do aluno sob minha tutela</h6>
        <img class="seta" src="../../../assets/seta_cheia.png" alt="" style="width: 80px;">
         <div class="toggle"><ion-toggle></ion-toggle></div>
+      </ion-row> -->
+
+      <ion-row class="ion-justify-content-center" style="margin-top: 20px;text-align: center;display: grid;">
+        <ion-item>
+          <ion-label>Tipo de Acesso</ion-label>
+          <ion-select value="brown" okText="Ok" cancelText="Cancela">
+            <ion-select-option value="tutor">Tutor</ion-select-option>
+            <ion-select-option value="professor">Professor</ion-select-option>
+            <ion-select-option value="administrativo">Administrativo</ion-select-option>
+            <ion-select-option value="equipeApoio">Equipe de Apoio</ion-select-option>
+          </ion-select>
+        </ion-item>
       </ion-row>
 
-      <ion-row class="ion-justify-content-center">
-        <ion-button color="primary"style="margin-top: -45px">Cadastrar</ion-button>
-        <ion-button (click)="cancelar()" color="danger"style="margin-top: -45px">Cancelar</ion-button>
+
+
+      <ion-row class="ion-justify-content-center"  style="margin-top: 10px; padding-bottom: 20px;">
+        <ion-button (click)="register()" color="primary">Cadastrar</ion-button>
+        <ion-button (click)="cancelar()" color="danger" >Cancelar</ion-button>
       </ion-row>
+     </div>
 
     </div>
   </ion-grid>

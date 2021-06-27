@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class AppComponent {
   constructor(private menu: MenuController,
+    private authService: AuthService,
     public router: Router) { }
 
   openFirst() {
@@ -16,10 +18,20 @@ export class AppComponent {
     this.menu.open('first');
   }
 
-  rotas(param: any){
-    let local = param;
-    this.router.navigate([local]);
+  rotas(param: any) {
+    // let local = param;
+    this.router.navigate([param]);
     this.menu.close();
+  }
+
+  async logout() {
+    try {
+      await this.authService.logout();
+      this.menu.close();
+    } catch (error) {
+      console.error(error);
+      this.menu.close();
+    }
   }
 
 

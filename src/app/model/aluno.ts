@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/quotes
 import { Ocorrencia } from "./ocorrencia";
 
 export class Aluno {

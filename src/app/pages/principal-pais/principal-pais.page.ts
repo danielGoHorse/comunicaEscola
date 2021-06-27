@@ -1,14 +1,14 @@
-/* eslint-disable @angular-eslint/use-lifecycle-interface */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
-import dataAluno from '../../assets/aluna.json';
+import dataAluno from '../../../assets/aluna.json';
+
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-principal-pais',
+  templateUrl: './principal-pais.page.html',
+  styleUrls: ['./principal-pais.page.scss'],
 })
-export class HomePage {
+export class PrincipalPaisPage implements OnInit {
 
   private aluna = dataAluno;
 
