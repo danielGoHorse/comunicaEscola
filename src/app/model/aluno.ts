@@ -11,6 +11,6 @@ export class Aluno {
     public pai: boolean;
     public mae: string;
     public mensagem: string;
-    public ocorrencia: Ocorrencia;
+    // public ocorrencia: Ocorrencia;
 
 }

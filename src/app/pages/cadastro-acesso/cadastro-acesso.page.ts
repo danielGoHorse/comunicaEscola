@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable @typescript-eslint/quotes */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -48,6 +49,10 @@ export class CadastroAcessoPage implements OnInit {
     } finally {
       this.loading.dismiss();
     }
+  }
+
+  teste(){
+    console.log("mudou");
   }
 
   async presentLoading() {

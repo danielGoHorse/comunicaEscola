@@ -1,36 +1,32 @@
+/* eslint-disable @typescript-eslint/adjacent-overload-signatures */
+/* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable arrow-body-style */
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreModule } from '@angular/fire/firestore';
-// import { Aluno } from '../model/aluno';
+// import { endereco } from '../model/endereco';
 import { map } from 'rxjs/operators';
-import { Aluno } from '../interfaces/aluno';
 import { Endereco } from '../interfaces/endereco';
-import { Turma } from '../interfaces/turma';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AlunoService {
-
-  private alunosCollections: AngularFirestoreCollection<Aluno>;
+export class EnderecoService {
   private enderecoCollections: AngularFirestoreCollection<Endereco>;
-  private turmaCollections: AngularFirestoreCollection<Turma>;
 
 
   constructor(private afs: AngularFirestore) {
-    this.alunosCollections = this.afs.collection<Aluno>('Alunos');
     this.enderecoCollections = this.afs.collection<Endereco>('Endereco');
-    this.turmaCollections = this.afs.collection<Turma>('Turma');
+
   }
 
-  // getAlunos() {
-  //   return this.alunosCollections.snapshotChanges().subscribe(res => {
+  // getendereco() {
+  //   return this.enderecoCollections.snapshotChanges().subscribe(res => {
   //     const data = res;
   //   });
   // }
 
-  getAlunos() {
-    return this.alunosCollections.snapshotChanges().pipe(
+  getEnderecos() {
+    return this.enderecoCollections.snapshotChanges().pipe(
       map(act =>{
         return act.map(a => {
           const data = a.payload.doc.data();
@@ -41,27 +37,27 @@ export class AlunoService {
     );
   }
 
-  addAlunos(aluno: Aluno) {
-    return this.alunosCollections.add(aluno);
+  addEndereco(endereco: Endereco) {
+    return this.enderecoCollections.add(endereco);
   }
 
-  getAluno(id: string) {
-    return this.alunosCollections.doc<Aluno>(id).valueChanges();
+  getEndereco(id: string) {
+    return this.enderecoCollections.doc<Endereco>(id).valueChanges();
   }
 
-  updateAluno(id: string, aluno: Aluno) {
-    return this.alunosCollections.doc<Aluno>(id).update(aluno);
+  updateEndereco(id: string, endereco: Endereco) {
+    return this.enderecoCollections.doc<Endereco>(id).update(endereco);
   }
 
-  deleteAluno(id: string) {
-    return this.alunosCollections.doc(id).delete();
+  deleteEndereco(id: string) {
+    return this.enderecoCollections.doc(id).delete();
   }
 
 
 
 
   // getProducts() {
-  //   return this.alunosCollections.snapshotChanges().pipe(
+  //   return this.enderecoCollections.snapshotChanges().pipe(
   //     return actions.mapmap(actions => {
   //       (a => {
   //         const data = a.payload.doc.data();

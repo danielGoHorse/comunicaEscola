@@ -1,36 +1,31 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable arrow-body-style */
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreModule } from '@angular/fire/firestore';
-// import { Aluno } from '../model/aluno';
+// import { turma } from '../model/turma';
 import { map } from 'rxjs/operators';
-import { Aluno } from '../interfaces/aluno';
-import { Endereco } from '../interfaces/endereco';
 import { Turma } from '../interfaces/turma';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AlunoService {
-
-  private alunosCollections: AngularFirestoreCollection<Aluno>;
-  private enderecoCollections: AngularFirestoreCollection<Endereco>;
+export class TurmaService {
   private turmaCollections: AngularFirestoreCollection<Turma>;
 
 
   constructor(private afs: AngularFirestore) {
-    this.alunosCollections = this.afs.collection<Aluno>('Alunos');
-    this.enderecoCollections = this.afs.collection<Endereco>('Endereco');
+
     this.turmaCollections = this.afs.collection<Turma>('Turma');
   }
 
-  // getAlunos() {
-  //   return this.alunosCollections.snapshotChanges().subscribe(res => {
+  // getturmas() {
+  //   return this.turmasCollections.snapshotChanges().subscribe(res => {
   //     const data = res;
   //   });
   // }
 
-  getAlunos() {
-    return this.alunosCollections.snapshotChanges().pipe(
+  getTurmas() {
+    return this.turmaCollections.snapshotChanges().pipe(
       map(act =>{
         return act.map(a => {
           const data = a.payload.doc.data();
@@ -41,27 +36,27 @@ export class AlunoService {
     );
   }
 
-  addAlunos(aluno: Aluno) {
-    return this.alunosCollections.add(aluno);
+  addTurmas(turma: Turma) {
+    return this.turmaCollections.add(turma);
   }
 
-  getAluno(id: string) {
-    return this.alunosCollections.doc<Aluno>(id).valueChanges();
+  getTurma(id: string) {
+    return this.turmaCollections.doc<Turma>(id).valueChanges();
   }
 
-  updateAluno(id: string, aluno: Aluno) {
-    return this.alunosCollections.doc<Aluno>(id).update(aluno);
+  updateTurma(id: string, turma: Turma) {
+    return this.turmaCollections.doc<Turma>(id).update(turma);
   }
 
-  deleteAluno(id: string) {
-    return this.alunosCollections.doc(id).delete();
+  deleteTurma(id: string) {
+    return this.turmaCollections.doc(id).delete();
   }
 
 
 
 
   // getProducts() {
-  //   return this.alunosCollections.snapshotChanges().pipe(
+  //   return this.turmasCollections.snapshotChanges().pipe(
   //     return actions.mapmap(actions => {
   //       (a => {
   //         const data = a.payload.doc.data();

@@ -1,6 +1,9 @@
+/* eslint-disable prefer-const */
+/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/quotes */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Aluno } from 'src/app/model/aluno';
+import { Aluno } from 'src/app/interfaces/aluno';
 
 @Component({
   selector: 'app-agenda',
@@ -13,23 +16,24 @@ export class AgendaPage implements OnInit {
   envioRecado: boolean;
 
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {
+   }
 
   ngOnInit() {
-    this.aluno = new Aluno;
+
   }
 
 
   segmentChanged(ev: any) {
-    let param = ev.detail.value
-    this.envioRecado = false
-    if (param == 'gerais') {
-      this.aluno.mensagem = "A partir de segunda-feira, dia 07/06 a aluna Maria Eduarda Silva do 5A irá retornar as aulas presenciais. Lembre-se de colocar uma máscara extra na mochila."
+    let param = ev.detail.value;
+    this.envioRecado = false;
+    if (param === 'gerais') {
+      this.aluno.mensagem = "A partir de segunda-feira, dia 07/06 a aluna Maria Eduarda Silva do 5A irá retornar as aulas presenciais. Lembre-se de colocar uma máscara extra na mochila.";
     }
-    if (param == 'ocorrencia') {
-      this.aluno.mensagem = "Informamos que hoje, 15/06 a aluna Maria Eduarda praticou bullyng com a colega Silvia Costa. Pedimos que converse com sua filha. Dica: assistam juntos o filme 'O Mínimo para Viver', pode ajudar na conversa"
+    if (param === 'ocorrencia') {
+      this.aluno.mensagem = "Informamos que hoje, 15/06 a aluna Maria Eduarda praticou bullyng com a colega Silvia Costa. Pedimos que converse com sua filha. Dica: assistam juntos o filme 'O Mínimo para Viver', pode ajudar na conversa";
     }
-    if (param == 'envio') {
+    if (param === 'envio') {
       this.aluno.mensagem = null;
       this.envioRecado = true;
     }
@@ -37,7 +41,7 @@ export class AgendaPage implements OnInit {
   }
 
   cancelar(){
-    this.router.navigate(["/agenda"])
+    this.router.navigate(["/agenda"]);
   }
 
 

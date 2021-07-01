@@ -1,0 +1,176 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="true"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <div style="display: flex;">
+        <img src="../../assets/logo.png" alt="" style="width: 40px">
+        <h6 class="h6-logo">Comunica Escola</h6>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+
+
+    <ion-row>
+      <ion-col size="4">
+        <div class="img">
+          <img src="../../../../assets/cab.png" alt="Avatar" class="avatar">
+        </div>
+      </ion-col>
+      <ion-col size="8" class="nome">
+        <h3><b style="color: #075d72;">{{aluno.nome}}</b></h3>
+      </ion-col>
+      <ion-col size="12">
+        <h4 style="margin: 0px;">Ficha Cadastral</h4>
+      </ion-col>
+
+    </ion-row>
+    <div class="row" style="text-align: left;margin-top: 30px; margin-bottom: -30px;">
+      <h6>Dados Acadêmicos</h6>
+      <hr style="width: 90%;">
+    </div>
+
+
+    <div class="row">
+      <div class="col-12 form-aluno">
+        <label for="basic-url">Escola</label>
+        <input type="text" [(ngModel)]="aluno.escola">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Série</label>
+        <input type="text" [(ngModel)]="turma.id">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Período</label>
+        <input type="text" [(ngModel)]="turma.periodo">
+      </div>
+    </div>
+    <div class="row" style="text-align: left;margin-top: 30px; margin-bottom: -30px;">
+      <h6>Dados da Criança</h6>
+      <hr style="width: 90%;">
+    </div>
+    <div class="row">
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Nascimento</label>
+        <input type="text" [(ngModel)]="aluno.nascimento">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Gênero</label>
+        <input type="text" [(ngModel)]="aluno.genero">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Religião</label>
+        <input type="text" [(ngModel)]="aluno.religiao">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Documento</label>
+        <input type="text" [(ngModel)]="aluno.rg">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Possui Alergia</label>
+        <input type="text" [(ngModel)]="aluno.alergia">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Possui Deficiência</label>
+        <input type="text" [(ngModel)]="aluno.deficiencia">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 form-aluno">
+        <label for="basic-url">Responsável Legal</label>
+        <input type="text" [(ngModel)]="aluno.nomeResp">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Telefone Fixo</label>
+        <input type="text" [(ngModel)]="aluno.telResp">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Celular</label>
+        <input type="text" [(ngModel)]="aluno.celResp">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 form-aluno">
+        <label for="basic-url">Em caso de emergência</label>
+        <input type="text" [(ngModel)]="aluno.nomeEmerg">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Telefone Fixo</label>
+        <input type="text" [(ngModel)]="aluno.telEmerg">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Celular</label>
+        <input type="text" [(ngModel)]="aluno.celEmerg">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Possui Convênio</label>
+        <input type="text" [(ngModel)]="aluno.temConvenio">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Tipo Sanguinio</label>
+        <input type="text" [(ngModel)]="aluno.tipoSanguinio">
+      </div>
+    </div>
+    <div class="row" style="text-align: left;margin-top: 30px; margin-bottom: -30px;">
+      <h6>Endereço</h6>
+      <hr style="width: 90%;">
+    </div>
+    <div class="row">
+      <div class="col-12 form-aluno">
+        <label for="basic-url">Logradouro</label>
+        <input type="text" [(ngModel)]="endereco.logradouro">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Numero</label>
+        <input type="text" [(ngModel)]="endereco.numero">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Complemento</label>
+        <input type="text" [(ngModel)]="endereco.complemento">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Bairro</label>
+        <input type="text" [(ngModel)]="endereco.bairro">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">CEP</label>
+        <input type="text" [(ngModel)]="endereco.cep">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 form-aluno">
+        <label for="basic-url">Cidade</label>
+        <input type="text" [(ngModel)]="endereco.cidade">
+      </div>
+      <div class="col-6 form-aluno">
+        <label for="basic-url">UF</label>
+        <input type="text" [(ngModel)]="endereco.uf">
+      </div>
+    </div>
+
+    <ion-row class="ion-justify-content-center" style="margin-top: 40px; margin-bottom: 30px;">
+      <ion-button class="btn-success" (click)="saveAluno()">Editar Dados</ion-button>
+    </ion-row>
+
+
+
+
+
+  </div>
+</ion-content>

@@ -65,6 +65,14 @@ const routes: Routes = [
     path: 'principal-escola',
     loadChildren: () => import('./pages/principal-escola/principal-escola.module').then( m => m.PrincipalEscolaPageModule)
   },
+  {
+    path: 'lista-alunos',
+    loadChildren: () => import('./pages/alunos/lista-alunos/lista-alunos.module').then( m => m.ListaAlunosPageModule)
+  },
+  {
+    path: 'cadastro-alunos',
+    loadChildren: () => import('./pages/alunos/cadastro-alunos/cadastro-alunos.module').then( m => m.CadastroAlunosPageModule)
+  },
 ];
 
 @NgModule({

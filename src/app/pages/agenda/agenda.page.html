@@ -40,11 +40,11 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-grid *ngIf="aluno.mensagem" class="text-box">
+  <ion-grid *ngIf="!aluno" class="text-box">
     <ion-row>
       <ion-text color="dark">
         <h5 >Olá</h5>
-        <h5>{{aluno.mensagem}}</h5>
+        <!-- <h5>{{aluno.mensagem}}</h5> -->
         <h5 >Atenciosamente a Professora</h5>
       </ion-text>
     </ion-row>

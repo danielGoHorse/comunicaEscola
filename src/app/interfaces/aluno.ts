@@ -1,9 +1,12 @@
+import { Turma } from './turma';
+
 export interface Aluno {
 
   id?: string;
   cpf?: string;
   nome?: string;
   codigo?: number;
+  foto?: string;
   email?: string;
   pai?: boolean;
   mae?: string;
@@ -11,12 +14,14 @@ export interface Aluno {
   rg?: string;
   dataNascimento?: string;
   idade?: string;
-  responsavelLegal?: string;
-  telefone?: string;
+  nomeResp?: string;
+  telResp?: string;
+  celResp?: string;
   religiao?: string;
-  emergenciaNome?: string;
-  emergenciaTelefone?: string;
-  possuiConvenio?: string;
+  nomeEmerg?: string;
+  celEmerg?: string;
+  telEmerg?: string;
+  temConvenio?: string;
   nomeConvenio?: string;
   alergia?: boolean;
   nomeAlergia?: string;
@@ -26,6 +31,9 @@ export interface Aluno {
   genero?: string;
   escola?: string;
   serie?: string;
-  turma?: string;
+  turma?: Turma;
   periodo?: string;
+  userId?: string;
+  cerateAdt?: number;
+  ocorrencia?: string;
 }
